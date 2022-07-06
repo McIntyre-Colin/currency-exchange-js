@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+            Exchange Rates
+    </title>
+    <meta name="author" content="Colin M.">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-title">
+                <h1>Currency Exchange Rates</h1>
+            </div>
+            
+        </div>
+
+        <div class="content">
+            <div class="Search">
+                <div class="Search-title">
+                    Select Base Currency:
+                </div>
+                <form onClick="alert('Eur\nYen\nGBP\nAUN')" class="Search-area">
+                    <div class="Search-area-text">
+                        USD 
+                    </div>
+                </form>
+            </div>
+
+            <div class="BarChart">
+                <div class="BarChart-bar" style="height: 50%;">USD $</div>
+                <div onclick="alert('1 Euro is worth 1.02 USD')" 
+                class="BarChart-bar" style="height: 60%;">EUR €</div>
+                <div onclick="alert('1 Pound is worth 1.19 USD')" 
+                class="BarChart-bar" style="height: 70%;">GBP £</div>
+                <div onclick="alert('1 Yen is worth 0.0074 USD')" 
+                class="BarChart-bar" style="height: 10%;">JPY ¥</div>
+                <div onclick="alert('1 Austrailian Dollar is worth 0.68 USD')" 
+                class="BarChart-bar" style="height: 34%;">AUD $</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>

@@ -1,0 +1,163 @@
+:root{
+    --main-bg-color: #392A48 ; /*#0E2159 #B7B3D4*/
+    --second-bg-color: #fff ; /* #2B2D2F #36454F  */
+    --main-font-family: 'Poppins', Arial, Verdana;;
+    --main-text-color: #fff ;
+    --second-text-color: #000;
+    --search-height:40px;
+}
+
+ 
+.container {
+    display: grid;
+    grid-template-columns:10% 1fr 10%;
+    grid-template-rows: 150px auto;
+    grid-template-areas:    "navbar navbar navbar"
+                            "a content b";
+    background-color: var(--second-bg-color);
+    
+    
+
+}
+
+@media screen and (max-width:600px) {
+    .container{
+        display: grid;
+        grid-template-columns: 2.5% 1fr 2.5%;
+        grid-template-rows: 50px auto;
+        grid-template-areas:    "navbar navbar navbar"
+                                "a content b";
+        background-color: var(--second-bg-color);
+
+    }
+}
+
+.navbar {
+    background-color: var(--main-bg-color);
+    font-family: var(--main-font-family);
+    grid-area: navbar;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: left;
+    padding-left: 10%;
+    
+}
+
+.navbar-title {
+    grid-column: 1;
+    font-size:25px;
+    color: var(--main-text-color)
+}
+
+.content {
+    grid-area: content;
+    background-color: var(--second-bg-color);
+    height: fit-content;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:    "search"
+                            "graph";
+    
+    margin-top: 20px; 
+    overflow:hidden; 
+}
+
+.Search {
+    grid-area: search;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    position:relative;
+    
+}
+
+.Search-title {
+    flex: initial;
+    font-family: var(--main-font-family);
+    font-size: 25pt;
+    font-weight: bolder;
+    align-items: center;
+    color: var(--second-text-color);
+    position: relative;
+    
+}
+
+.Search-area {
+    flex: initial;
+    border-color: rgb(49, 49, 49);
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    height: var(--search-height);
+    width: 60px;
+    padding-left: 10px;
+    
+    position:relative;
+    left: 50px;
+    transition: all .3s;
+}
+
+.Search-area:hover {
+    width: 80px;
+    background-color: #f1f1f1;
+}
+
+.Search-area-text {
+    display: flex;
+    height: var(--search-height);
+    padding-left: 5px;
+    padding-right: 0px;
+    font-family: var(--main-font-family);
+    align-items: center;
+}
+
+.Search-area-text:after {
+    content: '- v';
+    padding-left: 10px;
+    transition: all 250ms;
+    opacity: 0;
+}
+
+.Search-area-text:hover:after {
+    opacity: 1;
+    transition: all 1s;
+}
+.BarChart {
+    grid-area: graph;
+    width: 100%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+
+}
+
+.BarChart-bar {
+    position:relative;
+    width: 17%;
+    margin-right: .5%;
+    margin-left: .5%;
+    background-color: #8658A5;
+    text-align: center;
+    color: var(--main-text-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+    font-weight: lighter;
+    transition: transform .3s;
+}
+
+.BarChart-bar:hover {
+    transform: scale(1.1);
+}
+
+.BarChart-bar:nth-of-type(odd) {
+    background-color: #4b365f;
+}
