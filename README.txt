@@ -1,1 +1,2 @@
-The conversion values were gotten from exchanges rates on google.
+Interactive SPA to show currency exchange
+JSON data retrieved from https://kc-exchangeratesapi.herokuapp.com/
