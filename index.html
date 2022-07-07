@@ -9,6 +9,7 @@
     </title>
     <meta name="author" content="Colin M.">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/btn.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,23 +27,43 @@
                 <div class="Search-title">
                     Select Base Currency:
                 </div>
-                <button onClick="cello_world()" class="Search-area">
-                    <div class="Search-area-text">
-                        USD 
+                <div class="Search-area">
+                    <div onclick="usd()" id ="usd" class="Search-area-text">
+                        USD
                     </div>
-                </button>
+                    
+                </div>
+                <div class="Search-area">
+                    <div onclick="eur()" id ="eur" class="Search-area-text">
+                        EUR
+                    </div>
+                </div>
+                <div class="Search-area">
+                    <div onclick="yen()" id ="yen" class="Search-area-text">
+                        YEN
+                    </div>
+                    
+                </div>
+                <div class="Search-area">
+                    <div onclick="gbp()" id ="gbp" class="Search-area-text">
+                        GPB
+                    </div>
+                </div>
+                <div class="Search-area">
+                    <div onclick="aud()" id ="aud" class="Search-area-text">
+                        AUD
+                    </div>
+                </div>
+                 
+                <!-- <form onClick="base_currency()" id = "CurrencyList" class="Search-area">
+                    <select class="Search-area-text">
+                       
+                    </select>
+                </form> -->
             </div>
 
-            <div class="BarChart">
-                <div class="BarChart-bar" style="height: 50%;">USD $</div>
-                <div onclick="alert('1 Euro is worth 1.02 USD')" 
-                class="BarChart-bar" style="height: 60%;">EUR €</div>
-                <div onclick="alert('1 Pound is worth 1.19 USD')" 
-                class="BarChart-bar" style="height: 70%;">GBP £</div>
-                <div onclick="alert('1 Yen is worth 0.0074 USD')" 
-                class="BarChart-bar" style="height: 10%;">JPY ¥</div>
-                <div onclick="alert('1 Austrailian Dollar is worth 0.68 USD')" 
-                class="BarChart-bar" style="height: 34%;">AUD $</div>
+            <div class="BarChart" id="chart">
+            <!-- Where the bars from the create bars inner.HTML is added -->
             </div>
 
         </div>

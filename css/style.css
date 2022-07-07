@@ -107,6 +107,7 @@
 
 .Search-area-text {
     display: flex;
+    flex-direction: row;
     height: var(--search-height);
     padding-left: 5px;
     padding-right: 0px;
