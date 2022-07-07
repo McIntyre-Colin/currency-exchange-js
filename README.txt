@@ -1,2 +1,4 @@
-Interactive SPA to show currency exchange
-JSON data retrieved from https://kc-exchangeratesapi.herokuapp.com/
+Colin McIntyre
+
+Interactive SPA to show currency exchange rates
+JSON data retrieved from https://exchangerate.host/#/

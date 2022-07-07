@@ -9,7 +9,6 @@
     </title>
     <meta name="author" content="Colin M.">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/btn.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,39 +26,14 @@
                 <div class="Search-title">
                     Select Base Currency:
                 </div>
-                <div class="Search-area">
-                    <div onclick="usd()" id ="usd" class="Search-area-text">
-                        USD
-                    </div>
+                <div onclick="currency_selector()" class="Search-area" id="btnContainer">
+                    <div class="Search-area-text active">USD</div>
+                    <div class="Search-area-text">EUR</div>
+                    <div class="Search-area-text">JPY</div>
+                    <div class="Search-area-text">GBP</div>
+                    <div class="Search-area-text">AUD</div>
                     
                 </div>
-                <div class="Search-area">
-                    <div onclick="eur()" id ="eur" class="Search-area-text">
-                        EUR
-                    </div>
-                </div>
-                <div class="Search-area">
-                    <div onclick="yen()" id ="yen" class="Search-area-text">
-                        YEN
-                    </div>
-                    
-                </div>
-                <div class="Search-area">
-                    <div onclick="gbp()" id ="gbp" class="Search-area-text">
-                        GPB
-                    </div>
-                </div>
-                <div class="Search-area">
-                    <div onclick="aud()" id ="aud" class="Search-area-text">
-                        AUD
-                    </div>
-                </div>
-                 
-                <!-- <form onClick="base_currency()" id = "CurrencyList" class="Search-area">
-                    <select class="Search-area-text">
-                       
-                    </select>
-                </form> -->
             </div>
 
             <div class="BarChart" id="chart">

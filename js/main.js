@@ -7,46 +7,37 @@ let currencies = [
     {name:'AUD', symbol:'$', height:'0%'},
 ]
 
-let base = 'USD'
-function usd() {
-    console.log('USD function selected');
-    let usd = document.getElementById('usd');
-    console.log('verifying usd selected', usd.textContent)
-    base = 'USD'
+document.addEventListener("DOMContentLoaded", function() {
+    currency_selector();
+  });
+
+function currency_selector() {
+    active_class_changer()
+    let btnContainer = document.getElementById('btnContainer');
+    let btn = btnContainer.getElementsByClassName('Search-area-text active'); 
+    console.log('the active button is: ', btn) 
+    base = btn[0].textContent
+    console.log('the currency collected is: ', base)
     currency_plotter(base)
+
 }
 
-function eur() {
-    console.log('eur function selected');
-    let eur = document.getElementById('eur');
-    console.log('verifying eur selected', eur.textContent);
-    base = 'EUR';
-    currency_plotter(base)
+function active_class_changer() {
+    let btnContainer = document.getElementById('btnContainer');
+    let btns = btnContainer.getElementsByClassName('Search-area-text');
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        let current = document.getElementsByClassName("active");
+        // If there's no active class
+        if (current.length > 0) {
+            current[0].className = current[0].className.replace(" active", "");
+        }
+        // Add the active class to the current/clicked button
+        this.className += " active";
+        });
+    }
 }
 
-function yen() {
-    console.log('eur function selected');
-    let yen = document.getElementById('yen');
-    console.log('verifying eur selected', yen.textContent);
-    base = 'YEN';
-    currency_plotter(base)
-}
-
-function gbp() {
-    console.log('eur function selected');
-    let gbp = document.getElementById('gbp');
-    console.log('verifying eur selected', gbp.textContent);
-    base = 'GBP';
-    currency_plotter(base)
-}
-
-function aud() {
-    console.log('eur function selected');
-    let aud = document.getElementById('aud');
-    console.log('verifying eur selected', aud.textContent);
-    base = 'AUD';
-    currency_plotter(base)
-}
 
 function currency_plotter(base) {
     console.log('Currency plotter called');
@@ -76,13 +67,10 @@ function create_bars(data, base, currencies) {
         console.log('the currency is:',currency.name)
         let ex_rate = data.rates[currency.name]
         bar_heights(ex_rate, currency)
-        console.log('The currency is ', currency.name, ' the ex rate is ', ex_rate)
-        console.log('Create bars currency height : ', currency.height)
         bar.innerHTML += `
         <div class="BarChart-bar" style="height: ${currency.height};" 
         onClick="alert('1 ${base} is worth ${ex_rate} ${currency.name}')">${currency.name}  ${currency.symbol}</div>
-        `;
-          
+        `; 
     }
 }
 
@@ -104,10 +92,8 @@ function currency_filter(currencies, base) {
 
 function bar_heights(ex_rate, currency) {
     console.log('Calculating hegiht function')
-    console.log('the exchange rate is: ',ex_rate)
     if (currency.name === base) {
         currency.height = '50%'
-        console.log('base height', currency.height)
     };
     // setting scale factors for bar height depending on the exchange rate
     // Finding pergentage difference between rates and using if tree to determine height
@@ -117,34 +103,23 @@ function bar_heights(ex_rate, currency) {
         height = height*-1
     };
     height = height + 50;
-    console.log('the height percentage is', height)
     // if tree to scale extreme values or ones close to the base currency
     // for visual clarity
     if (height === 50) {
         currency.height = '50%'
     } else if (height > 95) {
         currency.height = '90%';
-        console.log('the height is',currency.height);
     } else if (height > 80) {
         currency.height = '70%';
-        console.log('the height is',currency.height);
     } else if (height > 55) {
         currency.height = height.toString() + '%';
-        console.log('the height is',currency.height);
     } else if (height > 50) { 
         currency.height = '55%';
-        console.log('the height is',currency.height);
     } else if (height > 45) {
-        currency.height = '45%'
-        console.log('the height is',currency.height);
+        currency.height = '45%';
     } else if (height > 20) {
-        currency.height = height.toString() + '%';
-        console.log('the height is',currency.height); 
+        currency.height = height.toString() + '%'; 
     } else {
-        currency.height = '20%'
-        console.log('the height is',currency.height);
+        currency.height = '20%' 
     }
-    
-    console.log(currency.name,' height ', currency.height)
-
     }

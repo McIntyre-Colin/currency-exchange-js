@@ -86,46 +86,53 @@
 }
 
 .Search-area {
-    flex: initial;
-    border-color: rgb(49, 49, 49);
+    flex: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    position:relative;
+    left: 50px;
+   
+}
+
+ /* .Search-area:hover {
+    width: 80px;
+    background-color: #f1f1f1;
+}  */
+
+.Search-area-text {
+    display: flex;
+    height: var(--search-height);
+    font-family: var(--main-font-family);
+    align-items: center;
+    justify-content: center;
+    border-color: var(--main-bg-color);
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;
     height: var(--search-height);
     width: 60px;
-    padding-left: 10px;
+    margin-right: 10px;
+    transition: all .2s;
+}
+
+/* .Search-area-text:hover {
     
-    position:relative;
-    left: 50px;
-    transition: all .3s;
+} */
+
+.Search-area-text:hover {
+    background-color:var(--main-bg-color);
+    color: var(--main-text-color);    
 }
 
-.Search-area:hover {
+
+.active {
     width: 80px;
-    background-color: #f1f1f1;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
 }
 
-.Search-area-text {
-    display: flex;
-    flex-direction: row;
-    height: var(--search-height);
-    padding-left: 5px;
-    padding-right: 0px;
-    font-family: var(--main-font-family);
-    align-items: center;
-}
 
-.Search-area-text:after {
-    content: '- v';
-    padding-left: 10px;
-    transition: all 250ms;
-    opacity: 0;
-}
 
-.Search-area-text:hover:after {
-    opacity: 1;
-    transition: all 1s;
-}
 .BarChart {
     grid-area: graph;
     width: 100%;
